@@ -1,0 +1,109 @@
+# Struttura Contenuti Landing Page - Cammino Consapevole
+
+site:
+  title: "Cammino Consapevole - Counseling Olistico & Life Coaching"
+  brand_name: "Cammino Consapevole"
+
+navigation:
+  links:
+    - text: "Home"
+      href: "#home"
+    - text: "Servizi" 
+      href: "#servizi"
+    - text: "Approccio"
+      href: "#approccio"
+    - text: "Contatti"
+      href: "#contatti"
+
+hero:
+  main_title: "Counseling Olistico & Life Coaching"
+  subtitle: "per il Benessere Autentico"
+  quote:
+    text: "Il valore delle cose non sta nella loro durata, ma nell'intensità con cui vengono vissute."
+    author: "Fernando Pessoa"
+  description: "Accompagno persone come te a ritrovare equilibrio, motivazione e direzione. A sentirsi meglio con sé stesse e a riconnettersi con la propria verità profonda."
+  cta_button:
+    text: "Inizia il tuo Cammino"
+    href: "#contatti"
+
+services:
+  section_title: "Cosa Offro"
+  cards:
+    - icon: "💚"
+      title: "Sessioni di Counseling"
+      description: "Percorsi individuali in presenza o online per ritrovare equilibrio e chiarezza nei momenti di confusione."
+    - icon: "🎯"
+      title: "Life & Goal Coaching"
+      description: "Supporto concreto per il raggiungimento dei tuoi obiettivi e per allineare le azioni al tuo scopo."
+    - icon: "🧘"
+      title: "Mindfulness & Meditazione"
+      description: "Tecniche di rilassamento e meditazione guidata per gestire stress e ansia con strumenti pratici."
+    - icon: "🌱"
+      title: "Crescita Personale"
+      description: "Percorsi personalizzati per sviluppare autostima, consapevolezza e sciogliere blocchi emotivi."
+
+benefits:
+  section_title: "Con me puoi:"
+  list:
+    - "Ritrovare chiarezza nei momenti di confusione"
+    - "Sciogliere blocchi emotivi e paure limitanti"
+    - "Gestire stress e ansia con strumenti pratici"
+    - "Sviluppare autostima e consapevolezza personale"
+    - "Allineare mente, corpo e spirito con i tuoi valori"
+    - "Ricevere supporto nei momenti di cambiamento"
+
+approach:
+  section_title: "Il Mio Approccio"
+  points:
+    - "Accogliente, non giudicante, empatico"
+    - "Orientato al presente, ma radicato nella tua storia"
+    - "Basato sull'ascolto profondo, sul respiro, sulla presenza"
+  main_text: "Il cambiamento non è un salto nel vuoto. È un ritorno a casa. Dentro di te. Con amore, presenza, verità."
+  emphasis: "Il tuo benessere non è un lusso, è un diritto."
+  highlight_quotes:
+    - "Sii gentile con la tua parte scomoda. Non è un errore da correggere, ma una voce da ascoltare. È proprio da lì che può nascere la tua versione più vera."
+    - "Scelgo consapevolmente la realtà in cui voglio vivere e allineo le mie azioni al mio scopo."
+
+cta_section:
+  title: "Inizia da Qui"
+  main_text: "Il cambiamento non è un salto nel vuoto. È un ritorno a casa. Dentro di te. Con amore, presenza, verità."
+  emphasis: "Il tuo viaggio inizia da un passo. Consapevole. Vero."
+  buttons:
+    primary:
+      text: "Primo Incontro Gratuito"
+      href: "mailto:info@camminoconsapevole.it"
+    secondary:
+      text: "Chiamami Ora"
+      href: "tel:+393331234567"
+  floating_cards:
+    - icon: "🧘"
+      title: "Mindfulness"
+      text: "Tecniche di presenza e consapevolezza"
+    - icon: "💚"
+      title: "Counseling"
+      text: "Supporto empatico e non giudicante"
+    - icon: "🌱"
+      title: "Crescita"
+      text: "Percorso di trasformazione autentica"
+
+footer:
+  copyright: "&copy; 2025 Cammino Consapevole. Counseling Olistico & Life Coaching"
+
+# Metadati e configurazioni aggiuntive
+meta:
+  alt_texts:
+    logo: "Logo Cammino Consapevole - Mani che proteggono un cuore"
+    hero_background: "Sfondo meditativo per sezione hero"
+    cta_background: "Persona in meditazione nella natura"
+  
+  contact_info:
+    email: "info@camminoconsapevole.it"
+    phone: "+393331234567"
+    
+  theme_colors:
+    primary_green: "#4a9d5f"
+    warm_red: "#d85652"
+    cream: "#f5f1e8"
+    warm_white: "#fefcf7"
+    soft_gray: "#6b7280"
+    dark_text: "#1f2937"
