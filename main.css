@@ -172,6 +172,15 @@ nav {
     position: relative;
 }
 
+.logo-img {
+    height:80px; 
+    width:80px; 
+    object-fit:contain; 
+    border-radius:50%; 
+    box-shadow:0 2px 8px rgba(74,157,95,0.08); 
+    background:#fff;
+}
+
 .logo h2 {
     font-size: clamp(1.2rem, 4vw, 1.8rem);
     color: var(--cream);
@@ -243,6 +252,11 @@ nav {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .logo-img {
+        height:45px; 
+        width:45px;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
