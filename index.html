@@ -4,177 +4,1471 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paola Counselor Olistico & Mindfulness Coaching</title>
-    <link rel="stylesheet" href="main.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Swiper -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #4a9d5f;
+            --warm-red: #d85652;
+            --cream: #f5f1e8;
+            --warm-white: #fefcf7;
+            --soft-gray: #6b7280;
+            --dark-text: #1f2937;
+            --gradient-old: linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+            
+            --primary-sage: #8fbc8f;
+            --secondary-earth: #deb887;
+            --accent-coral: #ff7f7f;
+            --deep-forest: #2f4f2f;
+            --warm-cream: #faf7f0;
+            --soft-lavender: #e6e6fa;
+            --golden-honey: #daa520;
+            --ocean-blue: #4682b4;
+            --gradient-primary: linear-gradient(135deg, #8fbc8f 0%, #deb887 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff7f7f 0%, #e6e6fa 100%);
+            --gradient-mystical: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 12px 48px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 20px 64px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .font-dm-serif {
+            font-family: 'DM Serif Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--deep-forest);
+            background: var(--warm-cream);
+            overflow-x: hidden;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-lora {
+            font-family: 'Lora', serif;
+        }
+
+        /* Enhanced Navigation - FIXED */
+        .navbar {
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), background 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.92) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            display: flex;
+            opacity: 1;
+            pointer-events: auto;
+            background: rgba(255, 255, 255, 0.92) !important;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--deep-forest) !important;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: var(--primary-sage) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--deep-forest) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-old);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-sage) !important;
+            background: rgba(143, 188, 143, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-sage);
+            transition: all 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-coral);
+        }
+
+        /* Mobile Navigation Toggle - FIXED */
+        @media (max-width: 991px) {
+            .navbar-toggler {
+                border: 2px solid var(--deep-forest) !important;
+                border-radius: 8px !important;
+                padding: 6px 10px !important;
+                background: white !important;
+                position: relative !important;
+                z-index: 1001 !important;
+                display: block !important;
+                visibility: visible !important;
+            }
+
+            .navbar-toggler:focus,
+            .navbar-toggler:hover {
+                background: rgba(143, 188, 143, 0.1) !important;
+                border-color: var(--primary-sage) !important;
+                box-shadow: 0 0 0 0.2rem rgba(143, 188, 143, 0.5) !important;
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232f4f2f' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+                width: 24px !important;
+                height: 24px !important;
+                display: block !important;
+            }
+
+            .navbar.scrolled .navbar-toggler {
+                background: white !important;
+                border-color: var(--deep-forest) !important;
+            }
+        }
+
+        /* Enhanced Hero Section - FIXED */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            filter: brightness(1.5) saturate(1.2);
+            text-shadow: 0 2px 8px rgba(74,157,95,0.10), 0 4px 16px rgba(216,86,82,0.10);
+        }
+
+        .hero {
+            max-width: 1920px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            /* REMOVED: top: 50px; - This was causing the gap */
+            background: url('./media/hero-bg-alt.jpg') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 5%;
+            overflow: hidden;
+            /* Added padding-top to account for fixed navbar */
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.1) 0%, 
+                rgba(0, 0, 0, 0.3) 50%, 
+                rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            padding-right: 140px;
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            text-align: center;
+            color: white;
+            animation: slideInRight 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+            transform: translateX(60px);
+        }
+
+        .hero h1 {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 0.9;
+            text-shadow: 0 2px 8px rgba(74, 157, 95, 0.10), 0 1px 0 rgba(0,0,0,0.08);
+            padding-bottom: 13px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;;
+            text-shadow: 0 2px 16px rgba(74, 157, 95, 0.18), 0 1px 0 rgba(0,0,0,0.08);
+        }
+
+        .hero h3 {
+            font-size: clamp(1rem, 4vw, 1.7rem);
+            font-weight: 300;
+            font-style: italic;
+            background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 16px rgba(74, 157, 95, 0.18), 0 1px 0 rgba(0,0,0,0.08);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            line-height: 1.15;
+        }
+
+        .hero-tagline {
+            padding: 10px 20px;
+            font-size: clamp(1.1rem, 2vw, 1.7rem);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 1;
+            line-height: 1.6;
+            animation-delay: 0.5s;
+            animation: fadeInUp 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--primary-green);
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: fadeInUp 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s ease-in-out;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Responsive Design - FIXED */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 8% 0 8%; /* Added top padding for navbar */
+                justify-content: center;
+                text-align: center;
+                background: url('./media/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+            }
+
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+                padding-right: 0px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+                margin-bottom: 1rem;
+            }
+
+            .hero-tagline {
+                font-size: clamp(1rem, 4vw, 1.2rem);
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 5% 0 5%; /* Added top padding for navbar */
+            }
+
+            .hero h1 {
+                line-height: 1;
+            }
+
+            .hero h3 {
+                font-size: clamp(1rem, 6vw, 1.5rem);
+            }
+
+            .hero-tagline {
+                background: linear-gradient(135deg, 
+                    rgba(34, 197, 94, 0.45) 0%,
+                    rgba(16, 185, 129, 0.42) 25%, 
+                    rgba(239, 68, 68, 0.42) 75%,
+                    rgba(220, 38, 38, 0.45) 100%);
+                backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
+                -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
+                border-radius: 28px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 
+                    0 16px 50px rgba(0, 0, 0, 0.25),
+                    0 8px 24px rgba(34, 197, 94, 0.08),
+                    0 4px 12px rgba(239, 68, 68, 0.08),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-holistic {
+            background: var(--gradient-old);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .btn-primary-holistic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary-holistic:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary-holistic:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-secondary-holistic {
+            background: transparent;
+            border: 2px solid var(--primary-sage);
+            color: var(--primary-sage);
+            padding: 13px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary-holistic:hover {
+            background: var(--primary-sage);
+            color: white;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        /* Enhanced Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--warm-cream);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--deep-forest);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(143, 188, 143, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-forest);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--deep-forest);
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        /* Enhanced About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(230, 230, 250, 0.3) 0%, rgba(255, 127, 127, 0.1) 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--deep-forest);
+        }
+
+        .about-highlight {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-coral);
+            font-style: italic;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 1rem 0;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+            color: var(--deep-forest);
+        }
+
+        .benefits-list li::before {
+            content: '🌸';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* FIXED Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--warm-cream);
+        }
+
+        .testimonials-swiper {
+            overflow: hidden;
+            padding: 0 20px 50px 20px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            margin: 0 1rem;
+            height: auto;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-stars {
+            color: var(--golden-honey);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--deep-forest);
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-sage);
+        }
+
+        /* Swiper pagination styling */
+        .swiper-pagination {
+            position: static;
+            margin-top: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--primary-sage);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-sage);
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Enhanced Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-mystical);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+            animation: sparkle 10s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-description {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form .form-control {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: var(--deep-forest);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+        }
+
+        .footer-copyright {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Floating action button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-medium);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+        }
+
+        .floating-btn.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* Enhanced loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--warm-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(143, 188, 143, 0.3);
+            border-top: 3px solid var(--primary-sage);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Smooth scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 9999;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img class="logo-img" src="./media/logo.png" alt="Logo Paola Counselor Olistico">
-                <h2 class="font-dm-serif">Paola Counselor_Coach</h2>
-            </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#servizi">Servizi</a></li>
-            <li><a href="#approccio">Approccio</a></li>
-            <li><a href="#contatti">Contatti</a></li>
-        </ul>
-        <div class="mobile-menu" id="mobileMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        </nav>
-    </header>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
-    <main>
-        <section id=home class="hero">
-            <div class="hero-content font-dm-serif">
-                <h1><span style="font-size: clamp(3.2rem, 6vw, 5rem);">Counseling</span> <br> <span class="gradient-text">Olistico & Mindfulness</span> <span style="font-size: clamp(3.2rem, 6vw, 5rem);">Coaching</span></h1>
-                <h3 style="font-size: clamp(1.6rem, 2.5vw, 2rem);">"per favorire il Benessere Autentico"</h3>
-                <h2 style="font-size: clamp(1rem, 2vw, 1.5rem);">di Paola Boselli</h2>
-                <br>
-                <p class="hero-tagline font-lora">Accompagno persone a ritrovare equilibrio, motivazione e direzione. A sentirsi meglio con sé stesse e a riconnettersi con la propria verità profonda.</p>
-                <a href="#" class="cta-button font-dm-serif">Iniziamo Insieme</a>
-            </div>
-        </section>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
 
-        <section id="servizi" class="services">
-            <div class="container">
-                <h2 class="section-title fade-in">Servizi</h2>
-                <div class="services-grid">
-                    <div class="service-card fade-in">
-                        <div class="service-icon">💚</div>
-                        <h3>Sessioni di Counseling</h3>
-                        <p>Percorsi individuali in presenza o online per ritrovare equilibrio e chiarezza nei momenti di confusione.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🎯</div>
-                        <h3>Life & Goal Coaching</h3>
-                        <p>Supporto concreto per il raggiungimento dei tuoi obiettivi e per allineare le azioni al tuo scopo.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🧘</div>
-                        <h3>Mindfulness & Meditazione</h3>
-                        <p>Tecniche di rilassamento e meditazione guidata per gestire stress e ansia con strumenti pratici.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🌱</div>
-                        <h3>Crescita Personale</h3>
-                        <p>Percorsi personalizzati per sviluppare autostima, consapevolezza e sciogliere blocchi emotivi.</p>
-                    </div>
-                    <div class="service-card fade-in">
-                        <div class="service-icon">🌱</div>
-                        <h3>Altri servizi</h3>
-                        <a href="#contatti" class="cta-button">Scopri tutti i servizi</a>
-                    </div>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="logo-container">
+                    <img src="./media/logo.png" alt="Paola Boselli" class="logo-image">
+                    <span>Paola Counselor</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="benefits">
-            <div class="container">
-                <h2 class="section-title fade-in">Un aiuto per:</h2>
-                <ul class="benefits-list">
-                    <li class="fade-in">Sentirsi meglio con sé stessi</li>
-                    <li class="fade-in">Stare meglio con gli altri, nelle relazioni sia personali che professionali</li>
-                    <li class="fade-in">Riconoscere e gestire in positivo emozioni e bisogni</li>
-                    <li class="fade-in">Sviluppare autostima e consapevolezza personale</li>
-                    <li class="fade-in">Allineare mente, corpo e spirito con i tuoi valori per raggiungere obiettivi</li>
-                    <li class="fade-in">Praticare tecniche di Mindfullness</li>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servizi">Servizi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#approccio">Approccio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contatti">Contatti</a>
+                    </li>
                 </ul>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section id="approccio" class="approach">
-            <div class="container">
-                <h2 class="section-title fade-in">Il Mio Approccio</h2>
-                <div class="approach-content">
-                    <div class="approach-text fade-in">
-                        <ul class="approach-points">
-                            <li>Accogliente, non giudicante, empatico</li>
-                            <li>Orientato al presente, ma radicato nella tua storia</li>
-                            <li>Basato sull'ascolto profondo, sul respiro, sulla presenza</li>
-                        </ul>
-                        
-                        <p>Il cambiamento non è un salto nel vuoto. È un ritorno a casa. Dentro di te. Con amore, presenza, verità.</p>
-                        
-                        <p><strong>Il tuo benessere non è un lusso, è un diritto.</strong></p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content font-dm-serif">
+            <h1>
+                <span style="font-size: clamp(3.2rem, 6vw, 5rem);">Counseling</span> <br> 
+                <span class="gradient-text">Olistico & Mindfulness</span> <br>
+                <span style="font-size: clamp(3.2rem, 6vw, 5rem);">Coaching</span>
+            </h1>
+            <p class="hero-subtitle font-dancing" style="font-size:clamp(1.8rem, 4vw, 2.5rem); color: var(--primary-sage); font-size: 800;" data-aos="fade-up" data-aos-delay="300">"per favorire il Benessere Autentico"</p>
+            <h2 style="font-size: clamp(1rem, 2vw, 1.5rem);">di Paola Boselli</h2>
+            <br>
+            <p class="hero-tagline font-lora">Accompagno persone a ritrovare equilibrio, motivazione e direzione. A sentirsi meglio con sé stesse e a riconnettersi con la propria verità profonda.</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="700">
+                <a href="#contatti" class="btn btn-primary-holistic">
+                    <i class="bi bi-heart-fill me-2"></i>
+                    Iniziamo Insieme
+                </a>
+                <a href="#servizi" class="btn btn-secondary-holistic">
+                    <i class="bi bi-compass me-2"></i>
+                    Scopri di Più
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section -->
+    <section id="servizi" class="services-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Servizi</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h3 class="service-title">Sessioni di Counseling</h3>
+                        <p class="service-description">
+                            Percorsi individuali in presenza o online per ritrovare equilibrio e chiarezza nei momenti di confusione.
+                        </p>
                     </div>
-                    <div class="approach-highlight fade-in">
-                        <p>"Sii gentile con la tua parte scomoda. Non è un errore da correggere, ma una voce da ascoltare. È proprio da lì che può nascere la tua versione più vera."</p>
-                        
-                        <p style="margin-top: 1.5rem; font-weight: bold;">"Scelgo consapevolmente la realtà in cui voglio vivere e allineo le mie azioni al mio scopo."</p>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h3 class="service-title">Life & Goal Coaching</h3>
+                        <p class="service-description">
+                            Supporto concreto per il raggiungimento dei tuoi obiettivi e per allineare le azioni al tuo scopo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-peace"></i>
+                        </div>
+                        <h3 class="service-title">Mindfulness & Meditazione</h3>
+                        <p class="service-description">
+                            Tecniche di rilassamento e meditazione guidata per gestire stress e ansia con strumenti pratici.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <h3 class="service-title">Crescita Personale</h3>
+                        <p class="service-description">
+                            Percorsi personalizzati per sviluppare autostima, consapevolezza e sciogliere blocchi emotivi.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="service-title">Terapia di Coppia</h3>
+                        <p class="service-description">
+                            Supporto per migliorare la comunicazione e rafforzare i legami nelle relazioni di coppia.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-gem"></i>
+                        </div>
+                        <h3 class="service-title">Consulenza Personalizzata</h3>
+                        <p class="service-description">
+                            Percorsi su misura per le tue esigenze specifiche. Contattami per scoprire tutti i servizi disponibili.
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contatti" class="cta-section">
-            <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Meditation Background" class="cta-bg-image">
-            <div class="cta-background"></div>
-            <div class="parallax-layer">
-                <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="30" r="2" fill="white" opacity="0.3">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="80" cy="20" r="1.5" fill="white" opacity="0.4">
-                        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="60" cy="70" r="1" fill="white" opacity="0.5">
-                        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="30" cy="80" r="2.5" fill="white" opacity="0.2">
-                        <animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite"/>
-                    </circle>
-                </svg>
+    <!-- Enhanced About/Approach Section -->
+    <section id="approccio" class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Il Mio Approccio</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3 class="font-playfair mb-3">Un aiuto per:</h3>
+                    <ul class="benefits-list">
+                        <li data-aos="fade-up" data-aos-delay="100">Sentirsi meglio con sé stessi</li>
+                        <li data-aos="fade-up" data-aos-delay="200">Stare meglio con gli altri, nelle relazioni sia personali che professionali</li>
+                        <li data-aos="fade-up" data-aos-delay="300">Riconoscere e gestire in positivo emozioni e bisogni</li>
+                        <li data-aos="fade-up" data-aos-delay="400">Sviluppare autostima e consapevolezza personale</li>
+                        <li data-aos="fade-up" data-aos-delay="500">Allineare mente, corpo e spirito con i tuoi valori</li>
+                        <li data-aos="fade-up" data-aos-delay="600">Praticare tecniche di Mindfulness</li>
+                    </ul>
+                </div>
+                <div class="about-highlight" data-aos="fade-left">
+                    <h4 class="font-playfair mb-3">La Mia Filosofia</h4>
+                    <p class="mb-3">
+                        <strong>Accogliente, non giudicante, empatico</strong><br>
+                        Orientato al presente, ma radicato nella tua storia<br>
+                        Basato sull'ascolto profondo, sul respiro, sulla presenza
+                    </p>
+                    <p class="mb-3">
+                        Il cambiamento non è un salto nel vuoto. È un ritorno a casa. Dentro di te. Con amore, presenza, verità.
+                    </p>
+                    <p class="font-dancing fs-4 text-center">
+                        "Sii gentile con la tua parte scomoda. Non è un errore da correggere, ma una voce da ascoltare."
+                    </p>
+                </div>
             </div>
-            
-            <div class="cta-container">
-                <div class="cta-grid">
-                    <div class="cta-content">
-                        <h2>Inizia da Qui</h2>
-                        <p>Il cambiamento non è un salto nel vuoto. È un ritorno a casa. Dentro di te. Con amore, presenza, verità.</p>
-                        <p><strong>Il tuo viaggio inizia da un passo. Consapevole. Vero.</strong></p>
-                        
-                        <div class="cta-buttons">
-                            <a href="mailto:info@camminoconsapevole.it" class="cta-button-primary">Primo Incontro Gratuito</a>
-                            <a href="tel:+393331234567" class="cta-button-secondary">Chiamami Ora</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Testimonianze</h2>
+            <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                ★★★★★
+                            </div>
+                            <p class="testimonial-text">
+                                "Paola mi ha aiutato a ritrovare la fiducia in me stessa. Il suo approccio gentile e non giudicante ha fatto la differenza."
+                            </p>
+                            <div class="testimonial-author">
+                                — Maria, 34 anni
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="cta-visual">
-                        <div class="floating-elements">
-                            <div class="floating-card card-1">
-                                <div class="card-icon">🧘</div>
-                                <div class="card-title">Mindfulness</div>
-                                <div class="card-text">Tecniche di presenza e consapevolezza</div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                ★★★★★
                             </div>
-                            
-                            <div class="floating-card card-2">
-                                <div class="card-icon">💚</div>
-                                <div class="card-title">Counseling</div>
-                                <div class="card-text">Supporto empatico e non giudicante</div>
+                            <p class="testimonial-text">
+                                "Le tecniche di mindfulness che ho imparato hanno trasformato il mio rapporto con lo stress quotidiano."
+                            </p>
+                            <div class="testimonial-author">
+                                — Andrea, 28 anni
                             </div>
-                            
-                            <div class="floating-card card-3">
-                                <div class="card-icon">🌱</div>
-                                <div class="card-title">Crescita</div>
-                                <div class="card-text">Percorso di trasformazione autentica</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                ★★★★★
+                            </div>
+                            <p class="testimonial-text">
+                                "Un percorso che ha cambiato profondamente la mia vita. Grazie per la tua presenza autentica."
+                            </p>
+                            <div class="testimonial-author">
+                                — Giulia, 41 anni
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Enhanced Contact Section -->
+    <section id="contatti" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title" data-aos="fade-up">Iniziamo Insieme</h2>
+                <p class="contact-description" data-aos="fade-up" data-aos-delay="200">
+                    Sei pronto a iniziare il tuo percorso di crescita e benessere? Contattami per una consulenza gratuita.
+                </p>
+                
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <h4>Telefono</h4>
+                            <p>+39 123 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@paolacounselor.it</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Dove</h4>
+                            <p>Online & Pavia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="col-lg-6">
+                        <form class="contact-form" id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Il tuo nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="La tua email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Il tuo messaggio" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-holistic w-100">
+                                <i class="bi bi-send me-2"></i>
+                                Invia Messaggio
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Paola Counselor Olistico. Counseling Olistico & Mindfullness Coaching</p>
+            <div class="footer-content">
+                <div class="footer-logo">Paola Counselor</div>
+                <p class="footer-description">
+                    Accompagno persone verso il benessere autentico attraverso un approccio olistico che unisce mente, corpo e spirito.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                <p>2025 Paola Counselor | Counseling Olistico & Mindfullness Coaching</p>
+                <p>Landing powered by <a href="https://alpacode.studio" style="text-decoration: none; color:wheat;">alpacode.studio</a></p>
+            </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <!-- Floating Action Button -->
+    <div class="floating-btn" id="backToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Loading overlay
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 500);
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollCurrent = window.pageYOffset;
+                const scrollPercentage = (scrollCurrent / scrollTotal) * 100;
+                scrollProgress.style.width = scrollPercentage + '%';
+            }
+        });
+
+        // FIXED: Testimonials Swiper initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialSwiper = new Swiper('.testimonials-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Per favore, compila tutti i campi.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Invio in corso...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Grazie per il tuo messaggio! Ti risponderò presto.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Mobile menu close on link click
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in effects
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Particles animation for hero section
+        function createParticles() {
+            const hero = document.querySelector('.hero');
+            if (!hero) return;
+            
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'hero-particles';
+            particlesContainer.style.cssText = `
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+            `;
+            
+            const particleCount = 15;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background: var(--primary-sage);
+                    border-radius: 50%;
+                    opacity: 0.3;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: float ${Math.random() * 3 + 3}s ease-in-out infinite;
+                    animation-delay: ${Math.random() * 6}s;
+                `;
+                particlesContainer.appendChild(particle);
+            }
+            
+            hero.appendChild(particlesContainer);
+            
+            // Add float animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(180deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Initialize particles
+        createParticles();
+    </script>
+
 </body>
 </html>
