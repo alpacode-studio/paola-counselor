@@ -1,3 +1,4 @@
+<!--
 <header class="banner">
   <a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
@@ -9,3 +10,4 @@
     </nav>
   @endif
 </header>
+-->
