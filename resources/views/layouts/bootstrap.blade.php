@@ -13,33 +13,23 @@
     
     <!-- Google Fonts - Optimized loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=DM+Serif+Display:ital,wght@0,400;1,400&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     @php(do_action('get_header'))
     @php(wp_head())
 
-    {{-- Conditional Asset Loading based on page --}}
-    @if(is_page('conditional'))
-      {{-- Clean assets for showcase page --}}
-      @vite(['resources/css/theme.css', 'resources/js/app.js'])
-    @else
-      {{-- Bootstrap assets for theme pages --}}
-      @vite(['resources/css/app.css', 'resources/js/app.js'])
-      {{-- @vite(['resources/css/instant-theme.css', 'resources/js/instant-theme.js']) --}}
-      @vite(['resources/css/custom-theme.css', 'resources/js/custom-theme.js'])
-      
-      <!-- Theme switcher for bootstrap pages -->
-      <script>
-        (function() {
-          const storedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-bs-theme', storedTheme);
-        })();
-      </script>
-    @endif
+    {{-- Bootstrap assets for theme pages --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/instant-theme.css', 'resources/js/instant-theme.js']) --}}
+    @vite(['resources/css/custom-theme.css', 'resources/js/custom-theme.js'])
+    
+    <!-- Theme switcher for bootstrap pages -->
+    <script>
+      (function() {
+        const storedTheme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', storedTheme);
+      })();
+    </script>
     
     @stack('styles')
   </head>

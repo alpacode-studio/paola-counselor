@@ -78,7 +78,7 @@
             <span class="gradient-text">Olistico & Mindfulness</span> 
             <span>Coaching</span>
         </h1>
-        <p class="alt-hero-subtitle font-dancing" style="font-size:clamp(1.8rem, 4vw, 2.5rem); color: var(--primary-sage); font-size: 800;" data-aos="fade-up" data-aos-delay="300">"per favorire il Benessere Autentico"</p>
+        <p class="alt-hero-subtitle font-dancing" style="font-size:clamp(1.8rem, 4vw, 2.5rem); color: var(--primary-sage); font-size: 800;" data-aos="fade-up" data-aos-delay="300">"per favorire il tuo Benessere più Autentico"</p>
         <h2 style="font-size: clamp(1rem, 2vw, 1.5rem);">di Paola Boselli</h2>
         <br>
         <div class="cta-buttons" data-aos="fade-up" data-aos-delay="700">

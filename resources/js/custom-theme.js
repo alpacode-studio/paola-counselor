@@ -118,35 +118,6 @@ if (backToTopBtn) {
     });
 }
 
-// Contact form submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const message = this.querySelector('textarea').value;
-    
-    // Simple validation
-    if (!name || !email || !message) {
-        alert('Per favore, compila tutti i campi.');
-        return;
-    }
-    
-    // Simulate form submission
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Invio in corso...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        alert('Grazie per il tuo messaggio! Ti risponderò presto.');
-        this.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-});
-
 // Mobile menu close on link click
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     link.addEventListener('click', () => {

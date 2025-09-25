@@ -1,8 +1,16 @@
-/* @import "tailwindcss" theme(static); */
-@source "../views/";
-@source "../../app/";
+/* Import Bootstrap CSS */
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-/* Only include if needed globally */
+/* Import Bootstrap Icons */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Import Swiper styles */
+@import 'swiper/css/autoplay';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&family=Lora:wght@400;500&family=DM+Serif+Display&display=swap');
+
+/* Screen reader only utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -24,4 +32,28 @@
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+/* Performance optimizations */
+.isotope-container {
+  contain: layout style;
+}
+
+.swiper-container {
+  contain: layout;
+}
+
+/* Bootstrap conflicts resolution */
+.features .features-grid {
+  display: grid !important;
+}
+
+.services .services-grid .service-card {
+  transition: all 0.3s ease !important;
+}
+
+@media (max-width: 991px) {
+  .features .features-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
