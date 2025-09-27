@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block WordPress admin areas
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/uploads/
+Disallow: /404/
+Disallow: /*?
+Disallow: /*.pdf$
+
+# Allow important paths
+Allow: /wp-content/uploads/*.jpg
+Allow: /wp-content/uploads/*.jpeg
+Allow: /wp-content/uploads/*.png
+Allow: /wp-content/uploads/*.webp
+
+# Sitemap
+Sitemap: https://paolaboselli.it/sitemap.xml

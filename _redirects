@@ -1,0 +1,18 @@
+# WordPress admin redirects
+/wp-admin/* /404 404
+/wp-includes/* /404 404
+/wp-content/uploads/* /404 404
+
+# Clean URLs for Paola's site
+/servizi/counseling-individuale.html /servizi/counseling-individuale/ 301
+/servizi/coaching-mindfulness.html /servizi/coaching-mindfulness/ 301
+/chi-sono.html /chi-sono/ 301
+/contatti.html /contatti/ 301
+
+# SEO redirects
+/services/* /servizi/:splat 301
+/about.html /chi-sono/ 301
+/contact.html /contatti/ 301
+
+# Fallback for SPA-like behavior
+/* /index.html 200

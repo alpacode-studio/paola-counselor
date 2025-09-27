@@ -1,0 +1,47 @@
+[build]
+  publish = "."
+  
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404"
+  status = 404
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/404"
+  status = 404
+
+# Clean URLs
+[[redirects]]
+  from = "/servizi/counseling-individuale.html"
+  to = "/servizi/counseling-individuale/"
+  status = 301
+
+# Contact form (if using Netlify Forms)
+[[redirects]]
+  from = "/wp-content/themes/*/forms/*"
+  to = "/.netlify/functions/contact-form"
+  status = 200
