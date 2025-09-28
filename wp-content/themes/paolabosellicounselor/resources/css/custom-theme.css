@@ -73,7 +73,7 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url('/wp-content/themes/paolabosellicounselor/resources/images/hero-bg-alt.jpg') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+    background: url('//wp-content/themes/paolabosellicounselor/resources/css/@images/hero-bg-alt.jpg') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -164,7 +164,7 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url('/wp-content/themes/paolabosellicounselor/resources/images/hero-bg-alt.jpg') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+    background: url('//wp-content/themes/paolabosellicounselor/resources/css/@images/hero-bg-alt.jpg') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -252,7 +252,7 @@ body {
         padding: 80px 8% 0 8%; /* Added top padding for navbar */
         justify-content: center;
         text-align: center;
-        background: url('/wp-content/themes/paolabosellicounselor/resources/images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+        background: url('//wp-content/themes/paolabosellicounselor/resources/css/@images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
     }
 
     .alt-hero-content {
@@ -378,7 +378,7 @@ body {
         padding: 80px 8% 0 8%; /* Added top padding for navbar */
         justify-content: center;
         text-align: center;
-        background: url('/wp-content/themes/paolabosellicounselor/resources/images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+        background: url('//wp-content/themes/paolabosellicounselor/resources/css/@images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
     }
 
     .hero-content {
@@ -706,7 +706,7 @@ body {
 /* Enhanced Contact Section */
 .contact-section {
     padding: 100px 0;
-    background: url("/wp-content/themes/paolabosellicounselor/resources/css/hero-4.jpg") center center/cover no-repeat;
+    background: url("//wp-content/themes/paolabosellicounselor/resources/css/@images/hero-4.jpg") center center/cover no-repeat;
     color: white;
     position: relative;
     overflow: hidden;
@@ -974,4 +974,16 @@ footer {
   .features .features-grid {
     grid-template-columns: 1fr !important;
   }
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-toggler {
+        display: block !important;
+        border: none;
+        padding: 0.25rem 0.5rem;
+    }
 }

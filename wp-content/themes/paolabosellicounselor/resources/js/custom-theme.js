@@ -1,5 +1,4 @@
 // COMPLETELY CLEANED custom-theme.js - NO BOOTSTRAP API CALLS ANYWHERE
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AOS from 'aos';
 import GLightbox from 'glightbox';
 import { Swiper } from 'swiper';

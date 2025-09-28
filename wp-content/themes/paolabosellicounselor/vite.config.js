@@ -11,7 +11,7 @@ export default defineConfig(({ command, mode }) => {
   const isProduction = mode === 'production'
   
   return {
-    base: env.VITE_BASE_URL || '/app/themes/sage/public/build/',
+    base: env.VITE_BASE_URL || 'paolabosellicounselor/wp-content/themes/paolabosellicounselor/public/build/',
     
     plugins: [
       laravel({
@@ -81,19 +81,18 @@ export default defineConfig(({ command, mode }) => {
     },
     
     server: {
-      // Development server configuration
       host: true,
       port: 3000,
       strictPort: false,
       cors: true,
-      // Proxy configuration for WordPress development
+      // FIXED proxy - these should proxy TO your WordPress site
       proxy: {
-        '/wp-admin': env.VITE_WP_URL || 'http://localhost',
-        '/wp-content': env.VITE_WP_URL || 'http://localhost',
-        '/wp-includes': env.VITE_WP_URL || 'http://localhost',
-        '/wp-json': env.VITE_WP_URL || 'http://localhost',
+        '/wp-admin': 'http://localhost/paolabosellicounselor',
+        '/wp-content': 'http://localhost/paolabosellicounselor', 
+        '/wp-includes': 'http://localhost/paolabosellicounselor',
+        '/wp-json': 'http://localhost/paolabosellicounselor',
       },
-      // HMR configuration
+      // FIXED HMR - remove the subdirectory
       hmr: {
         host: 'localhost',
         protocol: 'ws',
@@ -144,14 +143,13 @@ export default defineConfig(({ command, mode }) => {
           assetFileNames: (assetInfo) => {
             const info = assetInfo.name.split('.')
             const ext = info[info.length - 1]
-            if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
-              return `assets/images/[name]-[hash][extname]`
-            } else if (/woff2?|ttf|otf|eot/i.test(ext)) {
-              return `assets/fonts/[name]-[hash][extname]`
-            } else if (/css/i.test(ext)) {
-              return `assets/css/[name]-[hash][extname]`
+            if (/woff2?|ttf|otf|eot/i.test(ext)) {
+              return `fonts/[name][extname]` // Simplified naming
             }
-            return `assets/[name]-[hash][extname]`
+            if (/png|jpe?g|svg|gif|webp/i.test(ext)) {
+              return `images/[name][extname]`
+            }
+            return `[name][extname]`
           },
           chunkFileNames: 'assets/js/chunks/[name]-[hash].js',
           entryFileNames: 'assets/js/[name]-[hash].js',

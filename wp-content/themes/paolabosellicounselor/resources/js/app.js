@@ -1,4 +1,10 @@
 // Main application entry point
+
+import.meta.glob([
+  '../images/**',
+  '../fonts/**',
+]);
+
 // Import Bootstrap JS bundle (includes Popper)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -14,12 +20,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Typed.js
 import Typed from 'typed.js';
-
-// Import file assets
-import.meta.glob([
-  '../images/**',
-  '../fonts/**',
-]);
 
 // Make libraries globally available for inline scripts and other modules
 window.bootstrap = window.bootstrap || {};
