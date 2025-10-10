@@ -38,18 +38,25 @@
     @php(wp_body_open())
 
     <div id="app">
-      @if(is_page('showcase'))
-        {{-- No header/footer for showcase pages --}}
-        <main id="main">
-          @yield('content')
-        </main>
-      @else
+        @if(is_page('showcase'))
+          {{-- No header/footer for showcase pages --}}
+          <main id="main">
+            @yield('content')
+          </main>
+        @else
+
+        @include('sections.loading-overlay')
+        @include('sections.scroll-progress')
+        @include('sections.scroll-to-top')
+
         {{-- Normal theme layout --}}
         @include('sections.header')
 
         <main id="main" class="main">
           @yield('content')
         </main>
+
+        @include('sections.footer')
 
         @hasSection('sidebar')
           <aside class="sidebar">

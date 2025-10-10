@@ -1,4 +1,4 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+// COMPLETELY CLEANED custom-theme.js - NO BOOTSTRAP API CALLS ANYWHERE
 import AOS from 'aos';
 import GLightbox from 'glightbox';
 import { Swiper } from 'swiper';
@@ -15,7 +15,7 @@ import 'swiper/css/pagination';
 // Configure Swiper modules
 Swiper.use([Navigation, Pagination, Autoplay]);
 
-// Make libraries globally available (exactly like the original)
+// Make libraries globally available
 window.AOS = AOS;
 window.GLightbox = GLightbox;
 window.Swiper = Swiper;
@@ -39,13 +39,7 @@ window.addEventListener('load', function() {
     }
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// Scroll progress indicator
+// Scroll progress indicator (independent of navbar)
 window.addEventListener('scroll', function() {
     const scrollProgress = document.getElementById('scrollProgress');
     if (scrollProgress) {
@@ -56,7 +50,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// FIXED: Testimonials Swiper initialization
+// Testimonials Swiper initialization
 document.addEventListener('DOMContentLoaded', function() {
     const testimonialSwiper = new Swiper('.testimonials-swiper', {
         slidesPerView: 1,
@@ -83,22 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
 
-// Back to top button
+
+// Back to top button (independent utility)
 const backToTopBtn = document.getElementById('backToTop');
 
 if (backToTopBtn) {
@@ -118,18 +99,7 @@ if (backToTopBtn) {
     });
 }
 
-// Mobile menu close on link click
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-            bsCollapse.hide();
-        }
-    });
-});
-
-// Intersection Observer for fade-in effects
+// Intersection Observer for fade-in effects (independent utility)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -152,7 +122,7 @@ document.querySelectorAll('.service-card, .testimonial-card').forEach(el => {
     observer.observe(el);
 });
 
-// Particles animation for hero section
+// Particles animation for hero section (independent utility)
 function createParticles() {
     const hero = document.querySelector('.hero');
     if (!hero) return;

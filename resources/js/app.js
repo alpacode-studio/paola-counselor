@@ -1,4 +1,10 @@
 // Main application entry point
+
+import.meta.glob([
+  '../images/**',
+  '../fonts/**',
+]);
+
 // Import Bootstrap JS bundle (includes Popper)
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -14,12 +20,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Typed.js
 import Typed from 'typed.js';
-
-// Import file assets
-import.meta.glob([
-  '../images/**',
-  '../fonts/**',
-]);
 
 // Make libraries globally available for inline scripts and other modules
 window.bootstrap = window.bootstrap || {};
@@ -168,22 +168,7 @@ function initializeTestimonialsSwiper() {
 }
 
 function setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const target = document.querySelector(targetId);
-            if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+
 }
 
 function setupBackToTop() {
@@ -204,19 +189,9 @@ function setupBackToTop() {
 }
 
 function setupMobileMenu() {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (navbarCollapse) {
-        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navbarCollapse.classList.contains('show')) {
-                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                        toggle: false
-                    });
-                    bsCollapse.hide();
-                }
-            });
-        });
-    }
+    // Mobile menu functionality is now handled directly in header.blade.php
+    // This function is kept for compatibility but functionality moved to header
+    console.log('✅ Mobile menu setup delegated to header component');
 }
 
 function setupIntersectionObserver() {

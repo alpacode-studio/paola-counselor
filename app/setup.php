@@ -153,3 +153,29 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+add_action('wp_enqueue_scripts', function () {
+    if (defined('WP_ENV') && WP_ENV === 'development') {
+        wp_enqueue_script('vite', 'http://localhost:3000/vite/client', [], null);
+        wp_enqueue_script('app', 'http://localhost:3000/app.js', [], null);
+    } else {
+        // FIXED: Correct path to manifest and assets
+        $manifest_path = get_template_directory() . '/public/build/.vite/manifest.json';
+        
+        if (file_exists($manifest_path)) {
+            $manifest = json_decode(file_get_contents($manifest_path), true);
+            
+            if (isset($manifest['resources/js/app.js'])) {
+                wp_enqueue_script('app', 
+                    get_template_directory_uri() . '/public/build/' . $manifest['resources/js/app.js']['file'], 
+                    [], null, true);
+            }
+            
+            if (isset($manifest['resources/css/app.css'])) {
+                wp_enqueue_style('app', 
+                    get_template_directory_uri() . '/public/build/' . $manifest['resources/css/app.css']['file'], 
+                    [], null);
+            }
+        }
+    }
+});

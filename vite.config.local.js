@@ -11,7 +11,7 @@ export default defineConfig(({ command, mode }) => {
   const isProduction = mode === 'production'
   
   return {
-    base: env.VITE_BASE_URL || '/wp-content/themes/paolabosellicounselor/public/build/',
+    base: env.VITE_BASE_URL || 'paolabosellicounselor/wp-content/themes/paolabosellicounselor/public/build/',
     
     plugins: [
       laravel({
@@ -86,10 +86,10 @@ export default defineConfig(({ command, mode }) => {
       strictPort: false,
       cors: true,
       proxy: {
-        '/wp-admin': 'https://benessereconpaola.it',
-        '/wp-content': 'https://benessereconpaola.it', 
-        '/wp-includes': 'https://benessereconpaola.it',
-        '/wp-json': 'https://benessereconpaola.it',
+        '/wp-admin': 'http://localhost/paolabosellicounselor',
+        '/wp-content': 'http://localhost/paolabosellicounselor', 
+        '/wp-includes': 'http://localhost/paolabosellicounselor',
+        '/wp-json': 'http://localhost/paolabosellicounselor',
       },
       hmr: {
         host: 'localhost',
