@@ -15,25 +15,25 @@
                     <!-- Social Media Links -->
                     <div class="social-connect text-center">
                         <div class="social-grid mb-4">
-                            <a href="https://wa.me/393461234567" class="social-card whatsapp">
+                            <a href="https://wa.me/393336757041" class="social-card whatsapp">
                                 <i class="bi bi-whatsapp"></i>
                                 <span>WhatsApp</span>
                                 <small>Messaggi diretti</small>
                             </a>
                             
-                            <a href="https://instagram.com/paola.boselli.counselor" class="social-card instagram">
+                            <a href="https://www.instagram.com/paola.counselor/" class="social-card instagram">
                                 <i class="bi bi-instagram"></i>
                                 <span>Instagram</span>
-                                <small>@paolacounselor</small>
+                                <small>@paola.counselor</small>
                             </a>
                             
-                            <a href="mailto:paola.boselli@counselormindfulness.it" class="social-card envelope">
+                            <a href="mailto:paola_coacholistico@libero.it" class="social-card envelope">
                                 <i class="bi bi-envelope"></i>
                                 <span>Email</span>
-                                <small>paola.boselli@gmail.com</small>
+                                <small>paola_coacholistico@libero.it</small>
                             </a>
 
-                            <a href="https://tiktok.com/@paolaboselli" class="social-card tiktok">
+                            <a href="https://www.tiktok.com/@counselor._coach?_t=ZN-90SuvUXNQJz&_r=1" class="social-card tiktok">
                                 <i class="bi bi-tiktok"></i>
                                 <span>TikTok</span>
                                 <small>Scopri di più</small>
@@ -51,7 +51,7 @@
                             </p>
                             <a href="https://paolaboselli.ck.page/newsletter" class="btn btn-outline-light">
                                 <i class="bi bi- me-2"></i>
-                                Prenota la tua Consulenza Gratuita
+                                Prenota una chiamata conoscitiva Gratuita
                             </a>
                         </div>
 
@@ -59,16 +59,17 @@
                         <div class="contact-details mt-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.3);">
                             <div class="row text-center">
                                 <div class="col-md-6 mb-2">
-                                    <small style="color: rgba(255,255,255,0.8);">
+                                    <p style="color: rgba(255,255,255,0.8);">
                                         <i class="bi bi-geo-alt me-1"></i>
-                                        <strong>Modalità:</strong> Online & Presenza (Milano)
-                                    </small>
+                                        <strong>Sessioni Online</strong><br>
+                                        (disponibile anche in presenza)
+                                    </p>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <small style="color: rgba(255,255,255,0.8);">
+                                    <p style="color: rgba(255,255,255,0.8);">
                                         <i class="bi bi-clock me-1"></i>
-                                        <strong>Orari:</strong> Lun-Ven 9:00-19:00
-                                    </small>
+                                        <strong>Orari:</strong> Flessibili, su appuntamento
+                                    </p>
                                 </div>
                             </div>
                         </div>

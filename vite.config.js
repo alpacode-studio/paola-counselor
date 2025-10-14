@@ -12,6 +12,7 @@ export default defineConfig(({ command, mode }) => {
   
   return {
     base: env.VITE_BASE_URL || '/wp-content/themes/paolabosellicounselor/public/build/',
+    //base: 'paolabosellicounselor/wp-content/themes/paolabosellicounselor/public/build/',
     
     plugins: [
       laravel({

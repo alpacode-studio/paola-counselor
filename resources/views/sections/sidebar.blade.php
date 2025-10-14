@@ -1,7 +1,7 @@
 <!-- Vertical Contact Sidebar (Left) -->
 <div class="contact-sidebar" id="contactSidebar">
     <div class="contact-sidebar-toggle" id="contactToggle">
-        <i class="bi bi-chat-dots"></i>
+        <i class="bi bi-chat-dots" style="font-size: clamp(1.5rem, 4vh, 3rem);"></i>
     </div>
     
     <div class="contact-sidebar-content">
@@ -11,7 +11,7 @@
         </div>
         
         <div class="contact-buttons">
-            <a href="https://wa.me/393461234567" class="contact-btn whatsapp" target="_blank" rel="noopener">
+            <a href="https://wa.me/393336757041" class="contact-btn whatsapp" target="_blank" rel="noopener">
                 <div class="btn-icon">
                     <i class="bi bi-whatsapp"></i>
                 </div>
@@ -21,7 +21,7 @@
                 </div>
             </a>
             
-            <a href="https://www.instagram.com/paolaboselli/" class="contact-btn instagram">
+            <a href="https://www.instagram.com/paola.counselor/" class="contact-btn instagram" target="_blank" rel="noopener">
                 <div class="btn-icon">
                     <i class="bi bi-instagram"></i>
                 </div>
@@ -31,7 +31,7 @@
                 </div>
             </a>
 
-            <a href="https://tiktok.com/@paolaboselli" class="contact-btn tiktok">
+            <a href="https://www.tiktok.com/@counselor._coach?_t=ZN-90SuvUXNQJz&_r=1" class="contact-btn tiktok" target="_blank" rel="noopener">
                 <div class="btn-icon">
                     <i class="bi bi-tiktok"></i>
                 </div>
@@ -41,7 +41,7 @@
                 </div>
             </a>
             
-            <a href="mailto:paola.boselli@counselormindfulness.it" class="contact-btn email">
+            <a href="mailto:paola_coacholistico@libero.it" class="contact-btn email">
                 <div class="btn-icon">
                     <i class="bi bi-envelope"></i>
                 </div>
@@ -51,7 +51,7 @@
                 </div>
             </a>
             
-            <a href="https://calendly.com/paola-boselli/prima-consulenza" class="contact-btn calendar" target="_blank" rel="noopener">
+            <a href="https://cal.com/paola-boselli/prima-consulenza" class="contact-btn calendar" target="_blank" rel="noopener">
                 <div class="btn-icon">
                     <i class="bi bi-calendar-heart"></i>
                 </div>
@@ -60,10 +60,6 @@
                     <small>Prima consulenza</small>
                 </div>
             </a>
-        </div>
-        
-        <div class="contact-footer">
-            <small>Rispondo entro 2 ore</small>
         </div>
     </div>
 </div>
@@ -97,8 +93,8 @@
     right: -50px;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     background: linear-gradient(135deg, var(--primary-sage), var(--accent-coral));
     border-radius: 0 50% 50% 0;
     display: flex;

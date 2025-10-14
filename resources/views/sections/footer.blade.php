@@ -20,10 +20,11 @@
             <div class="footer-navigation-links">
                 <div class="footer-link-group">
                     <h5 class="footer-link-title">Servizi</h5>
-                    <a href="#servizi" class="footer-nav-link">Counseling Individuale</a>
-                    <a href="#servizi" class="footer-nav-link">Coaching Mindfulness</a>
-                    <a href="#servizi" class="footer-nav-link">Counseling Sistemico</a>
-                    <a href="#servizi" class="footer-nav-link">Programmi Olistici</a>
+                    <a href="#servizi" class="footer-nav-link">Counseling e Benessere Emotivo</a>
+                    <a href="#servizi" class="footer-nav-link">Mindfulness e Business Coaching</a>
+                    <a href="#servizi" class="footer-nav-link">Coaching Relazionale Sistemico</a>
+                    <a href="#servizi" class="footer-nav-link">Metodologie Olistiche</a>
+                    <a href="#servizi" class="footer-nav-link">Crescita & Empowerment</a>
                 </div>
                 
                 <div class="footer-link-group">
@@ -36,16 +37,16 @@
             </div>
             
             <div class="footer-social-media">
-                <a href="https://instagram.com/paola.boselli.counselor" class="footer-social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/paola.counselor/" class="footer-social-link" aria-label="Instagram">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://linkedin.com/in/paolabosellicounselor" class="footer-social-link" aria-label="LinkedIn">
-                    <i class="bi bi-linkedin"></i>
+                <a href="https://www.tiktok.com/@counselor._coach?_t=ZN-90SuvUXNQJz&_r=1" class="footer-social-link" aria-label="TikTok">
+                    <i class="bi bi-tiktok"></i>
                 </a>
-                <a href="mailto:paola.boselli@counselormindfulness.it" class="footer-social-link" aria-label="Email">
+                <a href="mailto:paola_coacholistico@libero.it" class="footer-social-link" aria-label="Email">
                     <i class="bi bi-envelope"></i>
                 </a>
-                <a href="https://wa.me/393461234567" class="footer-social-link" aria-label="WhatsApp">
+                <a href="https://wa.me/393336757041" class="footer-social-link" aria-label="WhatsApp">
                     <i class="bi bi-whatsapp"></i>
                 </a>
             </div>
@@ -56,7 +57,7 @@
         <div class="footer-copyright-section">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="footer-copyright-text">© 2025 Paola Boselli | Counselor Mindfulness & Coach Olistico Professionale</p>
+                    <p class="footer-copyright-text">© 2025 Paola Boselli (Professionista disciplinato ai sensi della legge n°4/2013)</p>
                     <p class="footer-legal-info"><strong>Codice Etico:</strong> Rispetto, Riservatezza, Professionalità</p>
                 </div>
                 <div class="col-md-6 text-md-end">

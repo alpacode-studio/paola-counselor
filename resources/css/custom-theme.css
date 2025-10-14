@@ -79,7 +79,6 @@ body {
     justify-content: flex-end;
     padding: 0 5%;
     overflow: hidden;
-    /* Added padding-top to account for fixed navbar */
     padding-top: 80px;
 }
 
@@ -124,7 +123,11 @@ body {
 }
 
 .hero-subtitle {
-    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent;
     text-shadow: 0 2px 16px rgba(74, 157, 95, 0.18), 0 1px 0 rgba(0,0,0,0.08);
 }
 
@@ -170,7 +173,6 @@ body {
     justify-content: flex-end;
     padding: 0 0%;
     overflow: hidden;
-    /* Added padding-top to account for fixed navbar */
     padding-top: 80px;
 }
 
@@ -215,7 +217,11 @@ body {
 }
 
 .alt-hero-subtitle {
-    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent;
     text-shadow: 0 2px 16px rgba(74, 157, 95, 0.18), 0 1px 0 rgba(0,0,0,0.08);
 }
 
@@ -247,50 +253,370 @@ body {
     transform: translateY(30px);
 }
 
+/* ============================================
+   ENHANCED RESPONSIVE - MIDDLE SCREEN COVERAGE
+   ============================================ */
+
+/* 768px-991px: Large Mobile / Small Tablet (Portrait) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero, .alt-hero {
+        padding: 80px 6% 0 6%;
+        justify-content: center;
+    }
+    
+    .hero-content, .alt-hero-content {
+        padding-right: 0;
+        max-width: 90%;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(2.8rem, 5.5vw, 3.5rem);
+        line-height: 1.1;
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+    
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(1rem, 2.2vw, 1.3rem);
+        padding: 12px 24px;
+    }
+    
+    .cta-buttons {
+        gap: 0.8rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 13px 32px;
+        font-size: 1rem;
+    }
+    
+    /* Services grid: 2 columns on small tablets */
+    .services-section .row > [class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .service-card {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    .service-title {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        gap: 2rem;
+    }
+    
+    .contact-item {
+        padding: 1.2rem 1.8rem;
+    }
+}
+
+/* 992px-1199px: Tablet Landscape / Small Laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero, .alt-hero {
+        padding: 80px 7% 0 7%;
+        justify-content: flex-end;
+    }
+    
+    .hero-content, .alt-hero-content {
+        padding-right: 80px;
+        max-width: 650px;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(3rem, 4.5vw, 4rem);
+        line-height: 1;
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+    }
+    
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        padding: 12px 28px;
+    }
+    
+    .cta-buttons {
+        gap: 1rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 14px 36px;
+        font-size: 1.05rem;
+    }
+    
+    /* Services grid: 3 columns on small laptops */
+    .services-section .row > [class*="col-"] {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    
+    .service-card {
+        padding: 2.2rem;
+    }
+    
+    .service-icon {
+        width: 75px;
+        height: 75px;
+        font-size: 1.9rem;
+    }
+    
+    .service-title {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2.7rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-info {
+        gap: 2.5rem;
+    }
+    
+    .contact-item {
+        padding: 1.3rem 2rem;
+    }
+    
+    /* Testimonials: 2 per row on small laptops */
+    .testimonials-swiper .swiper-slide {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 1200px-1399px: Standard Laptop */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .hero, .alt-hero {
+        padding: 80px 8% 0 8%;
+    }
+    
+    .hero-content, .alt-hero-content {
+        padding-right: 100px;
+        max-width: 680px;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(3.5rem, 4.8vw, 4.5rem);
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(1.4rem, 3vw, 1.65rem);
+    }
+    
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+        padding: 14px 32px;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 15px 38px;
+        font-size: 1.08rem;
+    }
+    
+    /* Services: optimal 3-column on standard laptops */
+    .service-card {
+        padding: 2.3rem;
+    }
+    
+    .service-icon {
+        width: 78px;
+        height: 78px;
+    }
+    
+    .service-title {
+        font-size: 1.45rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .testimonial-card {
+        min-height: 270px;
+        padding: 2.3rem;
+    }
+    
+    .contact-item {
+        padding: 1.4rem 2.2rem;
+    }
+}
+
+/* 1400px-1599px: Large Laptop */
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .hero, .alt-hero {
+        padding: 80px 9% 0 9%;
+    }
+    
+    .hero-content, .alt-hero-content {
+        padding-right: 120px;
+        max-width: 700px;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(4rem, 5vw, 4.8rem);
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(1.5rem, 3.2vw, 1.7rem);
+    }
+    
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(1.2rem, 2.3vw, 1.6rem);
+        padding: 15px 35px;
+    }
+    
+    .service-card {
+        padding: 2.4rem;
+    }
+    
+    .section-title {
+        font-size: 2.9rem;
+    }
+    
+    .testimonial-card {
+        min-height: 280px;
+    }
+}
+
+/* EXISTING MOBILE BREAKPOINTS - ENHANCED */
 @media (max-width: 768px) {
-    .alt-hero {
-        padding: 80px 8% 0 8%; /* Added top padding for navbar */
+    .hero, .alt-hero {
+        padding: 75px 8% 25px 8%;
         justify-content: center;
         text-align: center;
         background: url('@images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
+        min-height: 100vh;
+        height: auto;
     }
 
-    .alt-hero-content {
+    .hero-content, .alt-hero-content {
         text-align: center;
         max-width: 100%;
         padding-right: 0px;
     }
 
-    .alt-hero h1 {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(1rem, 4.5vw, 1.4rem);
         margin-bottom: 1rem;
     }
+    
+    .hero-description p, .alt-hero .hero-description p {
+        font-size: clamp(0.9rem, 3.8vw, 1.1rem) !important;
+        margin: 1.2rem auto !important;
+    }
 
-    .alt-hero-tagline {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        margin-bottom: 2rem;
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(0.95rem, 4vw, 1.15rem);
+        margin-bottom: 1.5rem;
+        padding: 10px 20px;
     }
 
     .cta-button {
-        padding: 16px 32px;
+        padding: 14px 30px;
         font-size: 1rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 12px 32px;
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .alt-hero {
-        padding: 80px 5% 0 5%; /* Added top padding for navbar */
+    .hero, .alt-hero {
+        padding: 70px 5% 20px 5%;
+        min-height: 100vh;
+        height: auto;
+        display: flex;
+        align-items: center;
     }
 
-    .alt-hero h1 {
+    .hero-content, .alt-hero-content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .hero h1, .alt-hero h1 {
         line-height: 1;
+        font-size: clamp(2rem, 9vw, 2.8rem) !important;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0;
+    }
+    
+    .hero h1 span, .alt-hero h1 span {
+        display: block;
+        margin-bottom: 0.2rem;
     }
 
-    .alt-hero h3 {
-        font-size: clamp(1rem, 6vw, 1.5rem);
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(0.9rem, 5vw, 1.2rem) !important;
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-description, .alt-hero .hero-description {
+        margin: 1rem 0;
+    }
+    
+    .hero-description p, .alt-hero .hero-description p {
+        font-size: clamp(0.85rem, 3.8vw, 1rem) !important;
+        line-height: 1.4;
+        margin: 0.8rem auto !important;
     }
 
-    .alt-hero-tagline {
+    .hero-tagline, .alt-hero-tagline {
         background: linear-gradient(135deg, 
             rgba(34, 197, 94, 0.45) 0%,
             rgba(16, 185, 129, 0.42) 25%, 
@@ -298,25 +624,168 @@ body {
             rgba(220, 38, 38, 0.45) 100%);
         backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
         -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
-        border-radius: 28px;
+        border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 
-            0 16px 50px rgba(0, 0, 0, 0.25),
-            0 8px 24px rgba(34, 197, 94, 0.08),
-            0 4px 12px rgba(239, 68, 68, 0.08),
+            0 12px 40px rgba(0, 0, 0, 0.2),
+            0 6px 20px rgba(34, 197, 94, 0.06),
+            0 3px 10px rgba(239, 68, 68, 0.06),
             inset 0 1px 0 rgba(255, 255, 255, 0.15),
             inset 0 -1px 0 rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+        margin-bottom: 1rem;
+        padding: 8px 16px;
     }
 
     .cta-button {
-        padding: 14px 28px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 11px 28px;
         font-size: 0.95rem;
+        white-space: nowrap;
+    }
+    
+    .hero h2, .alt-hero h2 {
+        font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+        margin-top: 0.5rem;
     }
 }
+
+/* Extra small screens - ultra compact */
+@media (max-width: 375px) {
+    .hero, .alt-hero {
+        padding: 65px 4% 15px 4%;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(1.8rem, 8.5vw, 2.5rem) !important;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero h3, .alt-hero h3 {
+        font-size: clamp(0.85rem, 4.5vw, 1.1rem) !important;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero-description p, .alt-hero .hero-description p {
+        font-size: clamp(0.8rem, 3.5vw, 0.95rem) !important;
+        margin: 0.6rem auto !important;
+    }
+    
+    .hero-tagline, .alt-hero-tagline {
+        font-size: clamp(0.8rem, 3.2vw, 0.95rem);
+        padding: 7px 14px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .cta-buttons {
+        gap: 0.6rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary-holistic i, .btn-secondary-holistic i {
+        display: none;
+    }
+}
+
+/* Landscape Mobile (horizontal orientation) - CRITICAL FIX */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero, .alt-hero {
+        min-height: auto;
+        height: auto;
+        padding: 60px 4% 40px 4%;
+    }
+    
+    .hero-content, .alt-hero-content {
+        max-width: 100%;
+    }
+    
+    .hero h1, .alt-hero h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        margin-bottom: 0.4rem;
+        line-height: 1;
+    }
+    
+    .hero h1 span, .alt-hero h1 span {
+        display: inline;
+        margin-bottom: 0;
+        margin-right: 0.3rem;
+    }
+    
+    /* HIDE subtitle in landscape to save space */
+    .hero h3, .alt-hero h3,
+    .hero-subtitle, .alt-hero-subtitle {
+        display: none;
+    }
+    
+    .hero-description, .alt-hero .hero-description {
+        margin: 0.5rem 0;
+    }
+    
+    .hero-description p, .alt-hero .hero-description p {
+        font-size: 0.85rem !important;
+        line-height: 1.3;
+        margin: 0.5rem auto !important;
+    }
+    
+    /* HIDE tagline in landscape */
+    .hero-tagline, .alt-hero-tagline {
+        display: none;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        gap: 0.6rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn-primary-holistic, .btn-secondary-holistic {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-primary-holistic i, .btn-secondary-holistic i {
+        display: none;
+    }
+    
+    .hero h2, .alt-hero h2 {
+        font-size: 0.8rem !important;
+        margin-top: 0.3rem;
+    }
+    
+    /* Section spacing adjustments for landscape */
+    .services-section,
+    .testimonials-section,
+    .contact-section,
+    .about-section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ============================================
+   END ENHANCED RESPONSIVE
+   ============================================ */
 
 @keyframes slideInRight {
     to {
@@ -371,77 +840,6 @@ body {
 
 .cta-button:hover::before {
     left: 100%;
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 80px 8% 0 8%; /* Added top padding for navbar */
-        justify-content: center;
-        text-align: center;
-        background: url('@images/hero-bg-red.png') center center/cover no-repeat, linear-gradient(135deg, var(--primary-green) 0%, var(--warm-red) 100%);
-    }
-
-    .hero-content {
-        text-align: center;
-        max-width: 100%;
-        padding-right: 0px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem, 10vw, 4rem);
-        margin-bottom: 1rem;
-    }
-
-    .hero-tagline {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-        margin-bottom: 2rem;
-    }
-
-    .cta-button {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 80px 5% 0 5%; /* Added top padding for navbar */
-    }
-
-    .hero h1 {
-        line-height: 1;
-    }
-
-    .hero h3 {
-        font-size: clamp(1rem, 6vw, 1.5rem);
-    }
-
-    .hero-tagline {
-        background: linear-gradient(135deg, 
-            rgba(34, 197, 94, 0.45) 0%,
-            rgba(16, 185, 129, 0.42) 25%, 
-            rgba(239, 68, 68, 0.42) 75%,
-            rgba(220, 38, 38, 0.45) 100%);
-        backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
-        -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.1);
-        border-radius: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 
-            0 16px 50px rgba(0, 0, 0, 0.25),
-            0 8px 24px rgba(34, 197, 94, 0.08),
-            0 4px 12px rgba(239, 68, 68, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        position: relative;
-        overflow: hidden;
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-        padding: 14px 28px;
-        font-size: 0.95rem;
-    }
 }
 
 .cta-buttons {
@@ -508,16 +906,16 @@ body {
 
 /* Enhanced Services Section */
 .services-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: var(--warm-cream);
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--deep-forest);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     position: relative;
 }
 
@@ -531,6 +929,14 @@ body {
     background: var(--gradient-primary);
     transform: translateX(-50%);
     border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: var(--deep-forest);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.85;
 }
 
 .service-card {
@@ -594,31 +1000,39 @@ body {
 
 /* Enhanced About Section */
 .about-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, rgba(230, 230, 250, 0.3) 0%, rgba(255, 127, 127, 0.1) 100%);
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(230, 230, 250, 0.2) 0%, rgba(255, 127, 127, 0.05) 100%);
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    gap: 3rem;
+    align-items: start;
 }
 
 .about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--deep-forest);
 }
 
+.about-text h3 {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    margin-bottom: 1.5rem;
+}
+
 .about-highlight {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     padding: 2rem;
     border-radius: 15px;
     border-left: 4px solid var(--accent-coral);
-    font-style: italic;
-    margin: 2rem 0;
     backdrop-filter: blur(10px);
+}
+
+.about-highlight h4 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 1.2rem;
 }
 
 .benefits-list {
@@ -627,10 +1041,9 @@ body {
 }
 
 .benefits-list li {
-    padding: 1rem 0;
+    padding: 0.8rem 0 0.8rem 2.5rem;
     position: relative;
-    padding-left: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--deep-forest);
 }
 
@@ -638,29 +1051,29 @@ body {
     content: '🌸';
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* FIXED Testimonials Section */
 .testimonials-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: var(--warm-cream);
 }
 
 .testimonials-swiper {
     overflow: hidden;
-    padding: 0 20px 50px 20px;
+    padding: 0 20px 40px 20px;
 }
 
 .testimonial-card {
     background: white;
-    border-radius: 20px;
-    padding: 2.5rem;
+    border-radius: 15px;
+    padding: 2rem;
     box-shadow: var(--shadow-soft);
     text-align: center;
     margin: 0 1rem;
     height: auto;
-    min-height: 250px;
+    min-height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -668,21 +1081,36 @@ body {
 
 .testimonial-stars {
     color: var(--golden-honey);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
 }
 
 .testimonial-text {
     font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
     color: var(--deep-forest);
     flex-grow: 1;
+    line-height: 1.6;
 }
 
 .testimonial-author {
     font-weight: 600;
     color: var(--primary-sage);
+    font-size: 0.9rem;
+}
+
+.testimonial-category {
+    margin-top: 0.5rem;
+}
+
+.testimonial-category small {
+    color: var(--primary-sage);
+    font-weight: 500;
+    background: rgba(143, 188, 143, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
 }
 
 /* Swiper pagination styling */
@@ -705,7 +1133,7 @@ body {
 
 /* Enhanced Contact Section */
 .contact-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background: url("@images/hero-4.jpg") center center/cover no-repeat;
     color: white;
     position: relative;
@@ -735,16 +1163,19 @@ body {
 
 .contact-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .contact-description {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-info {
@@ -853,28 +1284,6 @@ footer {
     opacity: 0.7;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .section-title {
-        font-size: 2.5rem;
-    }
-}
-
 /* Floating action button */
 .floating-btn {
     position: fixed;
@@ -980,7 +1389,7 @@ footer {
     display: none;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199px) {
     .navbar-toggler {
         display: block !important;
         border: none;

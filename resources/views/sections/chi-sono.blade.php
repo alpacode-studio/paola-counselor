@@ -1,37 +1,36 @@
-<!-- Enhanced Chi Sono Section -->
+<!-- Enhanced Chi Sono Section with Optimized Typography -->
 <section id="chi-sono" class="chi-sono-section py-5">
     <div class="container">
-        <h2 class="section-title mb-5" data-aos="fade-up">Chi Sono</h2>
+        <h2 class="section-title mb-4" data-aos="fade-up">Chi Sono</h2>
         
         <div class="row align-items-center g-4 g-lg-5">
             <!-- Image Column -->
             <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
                 <div class="chi-sono-image-container position-relative">
                     <div class="image-frame">
-                        <img src="{{ Vite::asset('resources/images/avatar.png') }}" 
+                        <img src="{{ Vite::asset('resources/images/about.jpeg') }}" 
                              alt="Paola Boselli - Counselor Mindfulness e Coach Olistico Professionale" 
                              class="chi-sono-image img-fluid rounded-3 shadow-lg"
-                             style="width: 100%; height: 400px; object-fit: cover;"
                              data-aos="zoom-in" 
                              data-aos-delay="400">
                     </div>
+                    <!--
                     <div class="floating-quote position-absolute bottom-0 start-0 translate-middle-x mb-n3" 
                          data-aos="fade-up" data-aos-delay="600">
                         <div class="bg-white p-3 rounded-3 shadow text-center" style="max-width: 280px;">
-                            <p class="floating-quote-text font-dancing mb-0" style="font-size: 1.1rem;">
+                            <p class="floating-quote-text font-dancing mb-0">
                                 "Insieme, ritroviamo il centro"
                             </p>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
 
             <style>
                 .floating-quote-text {
-                    font-size: 1.8rem;
-                    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(247, 218, 52, 0.918) 100%);
-                    text-shadow: 0 2px 16px rgba(74, 157, 95, 0.18), 0 1px 0 rgba(0,0,0,0.08);
-                    border-radius: 10px;
+                    font-size: clamp(1.2rem, 3vw, 1.5rem);
+                    color: var(--primary-sage);
                 }
 
                 @media (max-width: 768px) {
@@ -49,7 +48,7 @@
                     }
                     
                     .floating-quote-text {
-                        font-size: 1.4rem !important;
+                        font-size: 1.2rem !important;
                     }
                 }
 
@@ -60,7 +59,14 @@
                     }
                     
                     .floating-quote-text {
-                        font-size: 1.2rem !important;
+                        font-size: 1.1rem !important;
+                    }
+                }
+                
+                /* Landscape mobile - hide floating quote */
+                @media (max-height: 500px) and (orientation: landscape) {
+                    .floating-quote {
+                        display: none !important;
                     }
                 }
             </style>
@@ -68,31 +74,31 @@
             <!-- Content Column -->
             <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
                 <div class="chi-sono-content ps-lg-4">
-                    <h3 class="font-playfair mb-4" data-aos="fade-up" data-aos-delay="400">
-                        Ciao, sono <span class="fw-light" style="">Paola Boselli</span>
+                    <h3 class="chi-sono-greeting mb-3" data-aos="fade-up" data-aos-delay="400">
+                        Ciao, sono <span style="font-weight: 600; font-style: oblique;">Paola Boselli</span>
                     </h3>
                     
-                    <div class="chi-sono-text" data-aos="fade-up" data-aos-delay="500">
-                        <p class="lead mb-4">
+                    <div class="chi-sono-text text-justify" data-aos="fade-up" data-aos-delay="500">
+                        <p class="lead mb-3" style="font-size: clamp(1rem, 2vw, 1.1rem); text-align: justify;">
                             Counselor e Coach professionale, specializzata in Mindfulness, tecniche olistiche e approccio sistemico. 
                             <strong>Nel mio lavoro aiuto le persone a stare meglio</strong> a livello psico-fisico ed emotivo.
                         </p>
                         
-                        <p class="mb-4">
-                            Facilito la gestione di ansia, stress, preoccupazioni e difficoltà relazionali, supportando 
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+                            Facilito la gestione e riduzione di ansia, stress, preoccupazioni e difficoltà relazionali, supportando 
                             il percorso verso maggiore sicurezza e consapevolezza delle proprie risorse interne. 
                             Il mio approccio accompagna nel raggiungimento di obiettivi concreti - dal benessere fisico 
                             alle prestazioni professionali e sportive - attraverso motivazione e metodo strutturato.
                         </p>
                         
-                        <p class="mb-4">
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
                             L'approccio olistico e sistemico considera la persona nella sua completezza: corpo, mente, 
-                            spirito, emozioni ed energie sono interconnessi e inseriti in un sistema di relazioni - 
+                            spirito, emozioni ed energie tra loro interconnessi e inseriti in un sistema di relazioni - 
                             famiglia, coppia, ambiente lavorativo, comunità. Questa visione integrata permette 
                             trasformazioni autentiche e durature.
                         </p>
 
-                        <p class="mb-4">
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
                             <strong>Credo profondamente che stare e sentirsi bene sia assolutamente possibile.</strong> 
                             Nel mio spazio non esistono giudizi. Solo accoglienza autentica, ascolto vero, rispetto profondo.
                         </p>
@@ -100,22 +106,23 @@
                     
                     <!-- Qualifications -->
                     <div class="qualifications mb-4" data-aos="fade-up" data-aos-delay="600">
-                        <h4 class="font-playfair mb-3">Formazione & Specializzazioni</h4>
-                        <div class="qualification-item d-flex align-items-center mb-2">
+                        <h4 class="qualifications-title mb-3">Formazione & Specializzazioni</h4>
+                        <div class="qualification-item d-flex align-items-left mb-2">
                             <i class="bi bi-award-fill text-primary me-3"></i>
-                            <span>Counselor Professionale specializzata in Mindfulness</span>
+                            <span style="font-size: 0.95rem;">Certificazione professionale in Counseling (Associazione Professionale di categoria_Assocounseling e
+Accredia)</span>
                         </div>
-                        <div class="qualification-item d-flex align-items-center mb-2">
+                        <div class="qualification-item d-flex align-items-left mb-2">
                             <i class="bi bi-award-fill text-primary me-3"></i>
-                            <span>Approccio Sistemico e Tecniche Olistiche</span>
+                            <span style="font-size: 0.95rem;">Diploma professionale in Coaching Relazionale e Sistemico (Associazione Italiana Coach Professionisti_AICP)</span>
                         </div>
-                        <div class="qualification-item d-flex align-items-center mb-2">
+                        <div class="qualification-item d-flex align-items-left mb-2">
                             <i class="bi bi-award-fill text-primary me-3"></i>
-                            <span>Coach Professionale per Performance e Benessere</span>
+                            <span style="font-size: 0.95rem;">Certificazione Mindfulness Based Stress Reduction (MBSR)</span>
                         </div>
-                        <div class="qualification-item d-flex align-items-center mb-2">
+                        <div class="qualification-item d-flex align-items-left mb-2">
                             <i class="bi bi-award-fill text-primary me-3"></i>
-                            <span>Psicologia Umanistica e Pratiche Orientali</span>
+                            <span style="font-size: 0.95rem;">Formazione continua in Terapie Olistiche</span>
                         </div>
                     </div>
                     
@@ -129,58 +136,108 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Enhanced Values Section 
-        <div class="values-section mt-5 pt-4" data-aos="fade-up" data-aos-delay="800">
-            <h4 class="font-playfair text-center mb-4">I Miei Valori Fondamentali</h4>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="900">
-                    <div class="value-card text-center p-4 h-100 rounded-3">
-                        <div class="value-icon mb-3">
-                            <i class="bi bi-heart fs-1 text-primary"></i>
-                        </div>
-                        <h5 class="font-playfair mb-3">Accoglienza Autentica</h5>
-                        <p class="mb-0">Creo un ambiente libero da giudizi dove ogni persona è accolta con rispetto genuino e considerazione positiva incondizionata</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="value-card text-center p-4 h-100 rounded-3">
-                        <div class="value-icon mb-3">
-                            <i class="bi bi-infinity fs-1 text-primary"></i>
-                        </div>
-                        <h5 class="font-playfair mb-3">Integrazione Olistica</h5>
-                        <p class="mb-0">Il vero benessere emerge dall'equilibrio armonioso di corpo, mente, spirito nel contesto delle relazioni</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="1100">
-                    <div class="value-card text-center p-4 h-100 rounded-3">
-                        <div class="value-icon mb-3">
-                            <i class="bi bi-peace fs-1 text-primary"></i>
-                        </div>
-                        <h5 class="font-playfair mb-3">Presenza Mindful</h5>
-                        <p class="mb-0">Coltivo la consapevolezza in ogni momento come fondamento per trasformazioni personali durature</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <style>
-        /* Enhanced value cards with holistic theme */
-        .value-card {
-            background: linear-gradient(135deg, 
-                rgba(143, 188, 143, 0.15) 0%,    /* Sage green */
-                rgba(222, 184, 135, 0.10) 100%);  /* Earth tone */
-            border: 1px solid rgba(143, 188, 143, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .value-card:hover {
-            background: linear-gradient(135deg, 
-                rgba(143, 188, 143, 0.25) 0%, 
-                rgba(222, 184, 135, 0.20) 100%);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(143, 188, 143, 0.15);
-        }
-        </style>
     </div>
 </section>
+
+<style>
+/* Chi Sono Section Typography */
+.chi-sono-section {
+    padding: 80px 0;
+    background: var(--warm-cream);
+}
+
+.chi-sono-greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--deep-forest);
+}
+
+.chi-sono-text {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+}
+
+.chi-sono-text p {
+    text-align: justify !important;
+}
+
+.qualifications-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: var(--deep-forest);
+    font-weight: 600;
+}
+
+.chi-sono-image-container {
+    position: relative;
+}
+
+.chi-sono-image {
+    width: 100%; 
+    height: 800px; 
+    object-fit: cover;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .chi-sono-section {
+        padding: 60px 0;
+    }
+    
+    .chi-sono-greeting {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .chi-sono-text p {
+        font-size: 0.95rem !important;
+    }
+
+    .chi-sono-image {
+        width: 100%; 
+        height: 400px; 
+        object-fit: cover;
+    }
+    
+    .qualifications-title {
+        font-size: 1.15rem;
+        text-align: center;
+    }
+    
+    .qualification-item {
+        justify-content: center;
+    }
+    
+    .chi-sono-cta {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .chi-sono-greeting {
+        font-size: 1.25rem;
+    }
+    
+    .chi-sono-text p {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .qualification-item span {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .chi-sono-section {
+        padding: 50px 0;
+    }
+    
+    .chi-sono-image-container {
+        display: none;
+    }
+}
+</style>

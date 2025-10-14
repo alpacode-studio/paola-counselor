@@ -5,7 +5,6 @@
     @include('sections.hero')
     @include('sections.chi-sono')
     @include('sections.services')
-    @include('sections.testimonials')
     @include('sections.approach')
     @include('sections.contatti')
 
