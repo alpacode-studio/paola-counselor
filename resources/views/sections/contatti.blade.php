@@ -5,7 +5,7 @@
         <div class="contact-content">
             <h2 class="contact-title" data-aos="fade-up">Il Tuo Benessere Inizia Oggi</h2>
             <p class="contact-description" data-aos="fade-up" data-aos-delay="200">
-                <strong>Credo profondamente che stare e sentirsi bene sia assolutamente possibile.</strong><br>
+                <strong style="font-size: clamp(1.2rem, 2vh, 2.5rem)">Credo profondamente che stare e sentirsi bene sia assolutamente possibile.</strong><br>
                 Sei pronto a iniziare il tuo viaggio verso l'equilibrio psico-fisico ed emotivo autentico? 
                 Prenota la tua prima consulenza conoscitiva gratuita.
             </p>
@@ -15,7 +15,7 @@
                     <!-- Social Media Links -->
                     <div class="social-connect text-center">
                         <div class="social-grid mb-4">
-                            <a href="https://wa.me/393336757041" class="social-card whatsapp">
+                            <a href="https://api.whatsapp.com/send?phone=393336757041" class="social-card whatsapp">
                                 <i class="bi bi-whatsapp"></i>
                                 <span>WhatsApp</span>
                                 <small>Messaggi diretti</small>
@@ -46,12 +46,12 @@
                         <div class="newsletter-box mt-4">
                             <p style="color: white; opacity: 0.9;">
                                 <i class="bi bi-calendar-check me-2"></i>
-                                <strong>Prenota una chiamata conoscitiva</strong><br>
+                                <strong>Chiamami al +393336757041</strong><br>
                                 <small>Scopri come il mio approccio può aiutarti</small>
                             </p>
-                            <a href="https://paolaboselli.ck.page/newsletter" class="btn btn-outline-light">
-                                <i class="bi bi- me-2"></i>
-                                Prenota una chiamata conoscitiva Gratuita
+                            <a href="tel:+393336757041" class="btn btn-outline-light">
+                                <i class="bi bi-telephone me-2"></i>
+                                Prima chiamata conoscitiva Gratuita
                             </a>
                         </div>
 
@@ -59,14 +59,14 @@
                         <div class="contact-details mt-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.3);">
                             <div class="row text-center">
                                 <div class="col-md-6 mb-2">
-                                    <p style="color: rgba(255,255,255,0.8);">
+                                    <p style="color: rgba(255,255,255,0.8); font-size: clamp(0.9rem, 1.5vw, 1.5rem);">
                                         <i class="bi bi-geo-alt me-1"></i>
                                         <strong>Sessioni Online</strong><br>
                                         (disponibile anche in presenza)
                                     </p>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <p style="color: rgba(255,255,255,0.8);">
+                                    <p style="color: rgba(255,255,255,0.8); font-size: clamp(0.9rem, 1.5vw, 1.5rem);">
                                         <i class="bi bi-clock me-1"></i>
                                         <strong>Orari:</strong> Flessibili, su appuntamento
                                     </p>

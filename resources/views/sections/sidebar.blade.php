@@ -9,9 +9,19 @@
             <h6>Contattami</h6>
             <p>Inizia il tuo percorso</p>
         </div>
+
+        <a href="tel:+393336757041" class="contact-btn calendar" target="_blank" rel="noopener">
+            <div class="btn-icon">
+                <i class="bi bi-calendar-heart"></i>
+            </div>
+            <div class="btn-text">
+                <span>Chiamata</span>
+                <small>Prima consulenza</small>
+            </div>
+        </a>
         
         <div class="contact-buttons">
-            <a href="https://wa.me/393336757041" class="contact-btn whatsapp" target="_blank" rel="noopener">
+            <a href="https://api.whatsapp.com/send?phone=393336757041" class="contact-btn whatsapp" target="_blank" rel="noopener">
                 <div class="btn-icon">
                     <i class="bi bi-whatsapp"></i>
                 </div>
@@ -50,16 +60,7 @@
                     <small>Scrivi ora</small>
                 </div>
             </a>
-            
-            <a href="https://cal.com/paola-boselli/prima-consulenza" class="contact-btn calendar" target="_blank" rel="noopener">
-                <div class="btn-icon">
-                    <i class="bi bi-calendar-heart"></i>
-                </div>
-                <div class="btn-text">
-                    <span>Prenota</span>
-                    <small>Prima consulenza</small>
-                </div>
-            </a>
+        
         </div>
     </div>
 </div>
@@ -68,7 +69,7 @@
 /* ===== VERTICAL CONTACT SIDEBAR (LEFT) ===== */
 .contact-sidebar {
     position: fixed;
-    top: 50%;
+    top: 70%;
     left: 0;
     transform: translateY(-50%) translateX(-250px);
     width: 280px;
@@ -328,7 +329,46 @@
 /* Hide contact sidebar on very small screens */
 @media (max-width: 480px) {
     .contact-sidebar {
-        display: none;
+        width: 220px;
+        transform: translateY(-50%) translateX(-190px);
+    }
+
+    .contact-sidebar-toggle {
+        right: -20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .contact-sidebar-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .contact-header h6 {
+        font-size: 1.1rem;
+    }
+
+    .contact-header p {
+        font-size: 0.8rem;
+    }
+
+    .contact-btn {
+        padding: 0.6rem;
+        gap: 0.6rem;
+    }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .btn-text span {
+        font-size: 0.85rem;
+    }
+
+    .btn-text small {
+        font-size: 0.7rem;
     }
 }
 

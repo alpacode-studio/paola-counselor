@@ -46,7 +46,7 @@
                 <a href="mailto:paola_coacholistico@libero.it" class="footer-social-link" aria-label="Email">
                     <i class="bi bi-envelope"></i>
                 </a>
-                <a href="https://wa.me/393336757041" class="footer-social-link" aria-label="WhatsApp">
+                <a href="https://api.whatsapp.com/send?phone=393336757041" class="footer-social-link" aria-label="WhatsApp">
                     <i class="bi bi-whatsapp"></i>
                 </a>
             </div>

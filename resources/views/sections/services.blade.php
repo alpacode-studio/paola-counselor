@@ -114,7 +114,7 @@
                     <h3 class="service-title">Prima chiamata conoscitiva</h3>
                     <p class="service-description" style="">
                         <strong>Ogni sessione è un viaggio unico e dedicato verso il tuo miglior stato di benessere, 
-                        un momento sacro dedicato completamente alla tua crescita personale.</strong> 
+                        un momento sacro per la tua crescita personale.</strong> 
                         Inizia il tuo percorso con una chiamata conoscitiva.
                     </p>
                     <div class="service-cta mt-3">
@@ -131,10 +131,12 @@
 
 <style>
 .service-description {
-    
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 .service-benefits {

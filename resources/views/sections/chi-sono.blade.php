@@ -79,26 +79,26 @@
                     </h3>
                     
                     <div class="chi-sono-text text-justify" data-aos="fade-up" data-aos-delay="500">
-                        <p class="lead mb-3" style="font-size: clamp(1rem, 2vw, 1.1rem); text-align: justify;">
+                        <p class="lead mb-3" style="font-size: clamp(1rem, 2vw, 1.1rem); ">
                             Counselor e Coach professionale, specializzata in Mindfulness, tecniche olistiche e approccio sistemico. 
                             <strong>Nel mio lavoro aiuto le persone a stare meglio</strong> a livello psico-fisico ed emotivo.
                         </p>
                         
-                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; ">
                             Facilito la gestione e riduzione di ansia, stress, preoccupazioni e difficoltà relazionali, supportando 
                             il percorso verso maggiore sicurezza e consapevolezza delle proprie risorse interne. 
                             Il mio approccio accompagna nel raggiungimento di obiettivi concreti - dal benessere fisico 
                             alle prestazioni professionali e sportive - attraverso motivazione e metodo strutturato.
                         </p>
                         
-                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; ">
                             L'approccio olistico e sistemico considera la persona nella sua completezza: corpo, mente, 
                             spirito, emozioni ed energie tra loro interconnessi e inseriti in un sistema di relazioni - 
                             famiglia, coppia, ambiente lavorativo, comunità. Questa visione integrata permette 
                             trasformazioni autentiche e durature.
                         </p>
 
-                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+                        <p class="mb-3" style="font-size: 1rem; line-height: 1.7; ">
                             <strong>Credo profondamente che stare e sentirsi bene sia assolutamente possibile.</strong> 
                             Nel mio spazio non esistono giudizi. Solo accoglienza autentica, ascolto vero, rispetto profondo.
                         </p>
@@ -153,10 +153,12 @@ Accredia)</span>
 }
 
 .chi-sono-text {
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 .chi-sono-text p {
@@ -207,7 +209,6 @@ Accredia)</span>
     }
     
     .qualification-item {
-        justify-content: center;
     }
     
     .chi-sono-cta {

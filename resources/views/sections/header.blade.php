@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">
+                    <a class="nav-link" href="https://benessereconpaola.it">
                         <i class="bi bi-house-heart"></i>
                         <span>Home</span>
                     </a>
